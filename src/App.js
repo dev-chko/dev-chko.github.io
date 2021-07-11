@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import  React from 'react';
+import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 
-function App() {
+
+import Header from './Component/Header'
+
+const useStyles = makeStyles((theme) => ({
+  root : {
+    backgroundColor : "red",
+    width: "100%",
+    height:"150vh"
+  },
+  banner : {
+    backgroundColor : "purple",
+    width:"100%",
+    height:400
+  },
+  body: {
+    backgroundColor : "yellow",
+    width:'100%',
+    height:400
+  }
+}))
+
+
+const  App = () =>  {
+ const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container className={classes.root}>
+      <Header />
+      <Grid container  className={classes.banner}>
+
+      </Grid> 
+      <Grid contianer className={classes.body}>
+
+      </Grid>
+    </Grid>
   );
 }
 
